@@ -8,18 +8,11 @@ import React, {Component} from 'react';
 
 // 从 react-native 中导入系统开发需要的包
 import {
-	Platform, // 用来提供平台检测功能的
 	StyleSheet, // 样式相关的组件，专门用来创建样式的
-	Text, // 文本节点，所有文本必须放到这个里面
 	View, // 用来布局的，相当于 div
 } from 'react-native';
 
-const instructions = Platform.select({
-	ios: 'Press Cmd+R to reload,\n' +
-			'Cmd+D or shake for dev menu',
-	android: 'Double tap R on your keyboard to reload,\n' +
-			'Shake or press menu button for dev menu',
-});
+
 
 // 引入制作tabbars的组件
 import TabNavigator from 'react-native-tab-navigator'

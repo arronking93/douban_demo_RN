@@ -1,7 +1,17 @@
 import React, {Component} from 'react'
-import {View, Text, Image, StyleSheet} from 'react-native'
+import {
+	View,
+	Text,
+	Image,
+	StyleSheet,
+	TouchableHighlight
+} from 'react-native'
+
 // 引入swipe插件
 import Swiper from 'react-native-swiper'
+
+// 按需引入路由
+import {Actions} from "react-native-router-flux";
 
 export default class Home extends Component {
 	constructor(props) {
@@ -14,19 +24,19 @@ export default class Home extends Component {
 			{/*Swiper Begin*/}
 			<View style={{height: 220}}>
 				<Swiper style={styles.wrapper} showsButtons={true}>
-				<View>
-					<Image source={{uri: "http://www.itcast.cn/images/slidead/BEIJING/2017410109413000.jpg"}}
-								 style={styles.image}></Image>
-				</View>
-				<View>
-					<Image source={{uri: "http://www.itcast.cn/images/slidead/BEIJING/2017440109442800.jpg"}}
-								 style={styles.image}></Image>
-				</View>
-				<View>
-					<Image source={{uri: "http://www.itcast.cn/images/slidead/BEIJING/2017441409442800.jpg"}}
-								 style={styles.image}></Image>
-				</View>
-			</Swiper>
+					<View>
+						<Image source={{uri: "http://www.itcast.cn/images/slidead/BEIJING/2017410109413000.jpg"}}
+									 style={styles.image}></Image>
+					</View>
+					<View>
+						<Image source={{uri: "http://www.itcast.cn/images/slidead/BEIJING/2017440109442800.jpg"}}
+									 style={styles.image}></Image>
+					</View>
+					<View>
+						<Image source={{uri: "http://www.itcast.cn/images/slidead/BEIJING/2017441409442800.jpg"}}
+									 style={styles.image}></Image>
+					</View>
+				</Swiper>
 			</View>
 			{/*Swiper End*/}
 			
@@ -46,19 +56,25 @@ export default class Home extends Component {
 				</View>
 				<View style={styles.item}>
 					<Image source={require('../../images/menu4.png')} style={styles.logo}></Image>
+					<Text>视频专区</Text>
+				</View>
+				<TouchableHighlight style={styles.item} onPress={this.toMovieList} underlayColor="white">
+					<View>
+					<Image source={require('../../images/menu5.png')} style={styles.logo}></Image>
 					<Text>热映电影</Text>
 				</View>
-				<View style={styles.item}>
-					<Image source={require('../../images/menu5.png')} style={styles.logo}></Image>
-					<Text>联系我们</Text>
-				</View>
+				</TouchableHighlight>
 				<View style={styles.item}>
 					<Image source={require('../../images/menu6.png')} style={styles.logo}></Image>
-					<Text>新闻资讯</Text>
+					<Text>联系我们</Text>
 				</View>
 			</View>
 			{/*六宫格 End*/}
 		</View>
+	}
+	
+	toMovieList = () => {
+		Actions.movielist();
 	}
 }
 
