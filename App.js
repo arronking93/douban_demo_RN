@@ -28,6 +28,8 @@ import Search from './components/tabbars/Search.js'
 import ShoppingCar from './components/tabbars/ShoppingCar.js'
 import Me from './components/tabbars/Me.js'
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
 // 这是 TS（TypeScript） 的语法
 export default class App extends Component {
 	constructor(props) {
@@ -44,8 +46,8 @@ export default class App extends Component {
 					<TabNavigator>
 						<TabNavigator.Item
 								title="Home"
-								// renderIcon={() => <Image source={...}/>}
-								// renderSelectedIcon={() => <Image source={...}/>}
+								renderIcon={() => <Icon name="home" size={25} color="grey" />}
+								renderSelectedIcon={() => <Icon name="home" size={25} color="#0079ff" />}
 								selected={this.state.selectedTab === 'home'}
 								onPress={() => this.setState({selectedTab: 'home'})}
 						>
@@ -53,8 +55,8 @@ export default class App extends Component {
 						</TabNavigator.Item>
 						<TabNavigator.Item
 								title="搜索"
-								// renderIcon={() => <Image source={...}/>}
-								// renderSelectedIcon={() => <Image source={...}/>}
+								renderIcon={() => <Icon name="search" size={25} color="grey" />}
+								renderSelectedIcon={() => <Icon name="search" size={25} color="#0079ff" />}
 								// renderBadge={() => <CustomBadgeView/>}
 								selected={this.state.selectedTab === '搜索'}
 								onPress={() => this.setState({selectedTab: '搜索'})}
@@ -63,8 +65,8 @@ export default class App extends Component {
 						</TabNavigator.Item>
 						<TabNavigator.Item
 								title="购物车"
-								// renderIcon={() => <Image source={...}/>}
-								// renderSelectedIcon={() => <Image source={...}/>}
+								renderIcon={() => <Icon name="home" size={25} color="grey" />}
+								renderSelectedIcon={() => <Icon name="shopping-cart" size={25} color="#0079ff" />}
 								badgeText="0"
 								selected={this.state.selectedTab === '购物车'}
 								onPress={() => this.setState({selectedTab: '购物车'})}
@@ -73,8 +75,8 @@ export default class App extends Component {
 						</TabNavigator.Item>
 						<TabNavigator.Item
 								title="Me"
-								// renderIcon={() => <Image source={...}/>}
-								// renderSelectedIcon={() => <Image source={...}/>}
+								renderIcon={() => <Icon name="user" size={25} color="grey" />}
+								renderSelectedIcon={() => <Icon name="user-o" size={25} color="#0079ff" />}
 								// renderBadge={() => <CustomBadgeView/>}
 								selected={this.state.selectedTab === 'me'}
 								onPress={() => this.setState({selectedTab: 'me'})}

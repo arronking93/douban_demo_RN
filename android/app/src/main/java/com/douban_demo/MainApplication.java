@@ -1,5 +1,7 @@
 package com.douban_demo;
 
+import com.oblador.vectoricons.VectorIconsPackage;
+
 import android.app.Application;
 import android.util.Log;
 
