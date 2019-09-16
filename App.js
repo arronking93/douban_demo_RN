@@ -12,8 +12,6 @@ import {
 	View, // 用来布局的，相当于 div
 } from 'react-native';
 
-
-
 // 引入制作tabbars的组件
 import TabNavigator from 'react-native-tab-navigator'
 import Home from './components/tabbars/Home.js'
